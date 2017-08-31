@@ -1,29 +1,90 @@
 /* Base Application Styles */
-html,body{
+html, body {
   width: 100%;
   background-color: #222;
 }
 
-.content{
+.content {
   width: 100%;
   height: 100%;
 }
 
-.stage{
+.stage {
   position: relative;
   width: 100%;
-  height: 680px;
+  height: 900px;
 }
 
-.img-sec{
+.img-sec {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
   background-color: #ddd;
+  perspective: 1800px;
+  .img-figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    margin: 0;
+    border: 1px solid #ddd;
+    //height: 280px;
+
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 30px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px #000;
+
+    transform-origin: 0 0 ;
+    transform-style: preserve-3d;
+
+    transition: transform .6s ease-in-out,left .6s ease-in-out,top .6s ease-in-out;
+    &.is-inverse{
+      transform:translate(300px) rotateY(180deg);
+    }
+
+    img {
+      width: 100%;
+      height: 150px;
+    }
+
+    figcaption {
+      text-align: center;
+      .img-title {
+        color: #a0a7a2;
+        margin: 20px 0 0 0;
+        font-size: 16px;
+      }
+      .img-back{
+        position: absolute;
+        left: 0;
+        top:0;
+
+        //@include dis-whole;
+
+        color: #a7a0a2;
+
+        font-size: 22px;
+        line-height: 1.25;
+        text-align: center;
+        background-color: #fff;
+
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        overflow: auto;
+        box-sizing: border-box;
+
+        transform: rotateY(180deg) translateZ(1px);
+      }
+    }
+  }
+
 }
 
-.controller-nav{
+.controller-nav {
   position: absolute;
   left: 0;
   bottom: 30px;
